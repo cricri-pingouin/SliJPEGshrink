@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/06/16 16:37:09.496.bdsproj,D:\Delphi projects\filehash\filetype.bdsproj=D:\Delphi projects\filehash\filehash.bdsproj</Transaction>
+    <Transaction>2019/06/17 00:04:32.476.bdsproj,D:\Delphi projects\jpeg resize2\filehash.bdsproj=D:\Delphi projects\jpeg resize2\jpgresiz.bdsproj</Transaction>
+    <Transaction>2019/06/17 21:32:15.036.bdsproj,D:\Delphi projects\JPGshrnk\jpgresiz.bdsproj=D:\Delphi projects\JPGshrnk\jpgshrnk.bdsproj</Transaction>
+  </Transactions>
+</BorlandProject>
