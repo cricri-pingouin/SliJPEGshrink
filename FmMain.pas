@@ -185,6 +185,7 @@ begin
   //Passed files?
   if ParamCount = 0 then
     Exit;
+  Processed := 0;
   try
     for i := 1 to ParamCount do  //-1 due to base 0
       ResizeImage(ParamStr(i), trckbrSize.Position, trckbrQuality.Position);
@@ -241,6 +242,7 @@ begin
   // Create file catcher object to hide all messy details
   Catcher := TFileCatcher.Create(Msg.Drop);
   FileCount := Pred(Catcher.FileCount) + 1; //Not sure why +1 needed
+  Processed := 0;
   try
     for i := 0 to FileCount - 1 do  //-1 due to base 0
     begin
