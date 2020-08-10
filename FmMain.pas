@@ -188,8 +188,13 @@ begin
   Processed := 0;
   try
     for i := 1 to ParamCount do  //-1 due to base 0
+    begin
+      Application.ProcessMessages;
+      frmType.Caption := 'JPEG shrink: processing ' + IntToStr(i) + ' of ' + IntToStr(ParamCount);
       ResizeImage(ParamStr(i), trckbrSize.Position, trckbrQuality.Position);
+    end;
   finally
+    frmType.Caption := 'JPEG shrink';
     ShowMessage('JPEG pictures processed: ' + IntToStr(Processed) + sLineBreak + 'Invalid JPEG files skipped: ' + inttostr(ParamCount - Processed));
   end;
 end;
@@ -246,6 +251,8 @@ begin
   try
     for i := 0 to FileCount - 1 do  //-1 due to base 0
     begin
+      Application.ProcessMessages;
+      frmType.Caption := 'JPEG shrink: processing ' + IntToStr(i + 1) + ' of ' + IntToStr(FileCount);
       //Get file properties
       FullName := Catcher.Files[i];
       ResizeImage(FullName, trckbrSize.Position, trckbrQuality.Position);
@@ -253,6 +260,7 @@ begin
   finally    // Notify Windows we handled message
     Msg.Result := 0;
     Catcher.Free;
+    frmType.Caption := 'JPEG shrink';
     ShowMessage('JPEG pictures processed: ' + IntToStr(Processed) + sLineBreak + 'Invalid JPEG files skipped: ' + inttostr(FileCount - Processed));
   end;
 end;
